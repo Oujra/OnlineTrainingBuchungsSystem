@@ -1,0 +1,783 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+/* default browser margin und padding auf 0 setzen
+text deco keine unterlinien*/
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "OpenSans", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+html{
+   height: 100%;
+}
+body{
+    overflow-x: hidden;
+    height: 100%;
+    color: black;
+}
+main{
+    height: 100%;
+}
+.headercontainer{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    min-height: 400px;
+    max-height: 550px;
+    min-width: 300px;
+    height:50vw;
+    color:blanchedalmond;
+}
+.headercontainer:after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, 
+    rgba(0,0,0,0.12) 40%, rgba(27,32,48,1) 100%);
+}
+.headercontainer:before{
+    content:"";
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        background: #1b2030
+        url("img/fitnesheader.jpg") 50% 0 no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    animation: grow 120s linear 10ms infinite;
+    transition: all 0.4s ease-in-out;
+    z-index:-2;
+}
+
+@keyframes grow{
+    0% {transform: scale(1) translateY(0px)}
+    50% {transform: scale(1.5) translateY(-50px)}
+}
+.logo-container{
+    position:absolute;
+    margin: 20px 140px;
+    /*background-color: cadetblue;*/
+    height: 40%;
+}
+
+.logo img{
+    margin: 20px;
+    height: 70%;
+    border-radius: 6px;
+}
+.logo img:hover{
+    animation: bounce .7s linear;
+}
+.slogan{
+  /*  background-color: cadetblue;*/
+    opacity: 0.7;
+    align-self: center;
+    margin: 190px 160px;
+}
+.slogan h2{
+    font-family: "Lucida handwriting", Times, serif;
+    font-size: 16px;
+    font-weight: 200;
+    padding: auto;
+    cursor: pointer;
+}
+.slogan h2:hover{
+    color: rgba(141, 181, 177, 1);
+    transition: 2s;
+}
+.user-navigation{
+    /*background-color:rgba(141, 181, 177, 1);*/
+    float: right;
+    height: 40px;
+    width: 200px;
+    margin-left: auto;
+    display: inline-block;
+}
+.user-navigation p{
+    font-size: 15px; 
+}
+.user-navigation div .echoadmin{
+    background: blanchedalmond;
+}
+.user-navigation .mod{
+    margin-left: 90px;
+    color:seagreen;
+}
+.user-navigation span{
+    padding: 10px 10px;
+    font-size: 15px;
+    float: right;
+    color:lavender;
+}
+.navbar{
+    position:absolute;
+    width: 60px;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    overflow:hidden;
+    background-color: #202020;
+    transition: width .3s ease;
+    cursor: pointer;
+    box-shadow: 4px -7px 10px rgba(124, 0, 0, 0.363);
+}
+.navbar:hover{
+    width: 150px;
+    box-shadow: 4px -7px 10px rgba(158, 152, 152, 0.363);
+}
+.nav{
+    list-style-type: none;
+    color: white;
+}
+.nav:first-child{
+    padding-top: 80px;
+}
+.logout{
+    width: 30px;
+    height: 25px;
+    float: right;
+    padding:5px 0 5px 10px;
+}
+.nav-item .mod{
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.nav-item .modi{
+    margin-left: 25px;
+}
+.nav-item {
+    padding-bottom: 50px;
+}
+.nav-item a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    position: relative;
+    display: block;
+    top: -35px;
+    padding-top: 6.5px;
+    padding-left: 27px;
+    padding-right: 15px;
+    transition: all .3s ease;
+    margin-left: 35px;
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+}
+.nav-item a:after{
+    content:'';
+    visibility: visible;
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    top: 1.5px;
+    left: 7px;
+    border-radius: 2px;
+    background: radial-gradient(circle at 94.02% 90.03%, #54a4ff, 
+    transparent 100%);
+    opacity: 0;
+    transition: all .5s ease;
+    z-index: -10;
+}
+.nav-item a:hover:after{
+    opacity: 1;
+}
+@keyframes bounce{
+    20%, 50%, 80%, to {
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-5px);
+    }
+    70%{
+        transform: translateY(-2px);
+    }
+    90%{
+        transform: translateY(-1px);
+    }
+}
+@media  screen and (max-width: 1000px) {
+    html{
+        overflow: hidden;
+    }
+    .headercontainer{
+        min-height: 300px;
+        max-height: 450px;
+    }
+    .navbar{
+        width: 40px;
+    } 
+    .nav:first-child{
+        padding-top: 70px;
+    }
+    .nav-item img{
+        margin-left: 10px;
+        width:22px;
+        height:22px;
+    }
+    .nav-item {
+        padding-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width: 720px) {
+    .headercontainer{
+        min-height: 250px;
+        max-height: 350px;
+    }
+    .headercontainer:before{   
+            
+            background: #1b2030
+            url("img/fitnesheader.jpg") 30% 0 no-repeat;
+             background-size: 100%;
+             background-attachment: fixed;
+             animation: grow 120s linear 10ms infinite;
+             transition: all .4s ease-in-out;
+             z-index:-2;
+    }
+    .navbar:hover{
+        width: 110px;
+        box-shadow: 4px -7px 10px rgba(158, 152, 152, 0.363);
+    }
+    .logo-container{
+        margin: 15px 100px;
+        /*background-color: cadetblue;*/
+        height: 35%;
+    }
+    .slogan{
+          margin: 130px 120px;
+      }
+    .slogan h2{
+        font-size: 13px;
+    }
+    .nav:first-child{
+        padding-top: 60px;
+    }
+    .nav-item {
+        padding-bottom: 10px;
+    }
+    .nav-item a{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        top: -32px;
+        margin-left: 20px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width: 544px) {
+    .headercontainer{
+        min-height: 150px;
+        max-height: 250px;
+    }
+    .headercontainer:before{   
+            
+            background: #1b2030
+            url("img/fitnesheader.jpg") 30% 0 no-repeat;
+             background-size: 100%;
+             background-attachment: fixed;
+             animation: grow 120s linear 10ms infinite;
+             transition: all .4s ease-in-out;
+             z-index:-2;
+    }
+    .navbar:hover{
+        width: 100px;
+        box-shadow: 4px -7px 10px rgba(158, 152, 152, 0.363);
+    }
+    .logo-container{
+        margin: 5px 90px;
+        /*background-color: cadetblue;*/
+        height: 35%;
+    }
+    .slogan{
+          margin: 100px 110px;
+          width: 100%;
+      }
+    .slogan h2{
+        font-size: 13px;
+    }
+    .nav:first-child{
+        padding-top: 15px;
+    }
+    .nav-item {
+        padding-bottom: 5px;
+    }
+    .nav-item a{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        top: -31px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+}
+/* Buchungsmodal*/
+.buchung-modal{
+    
+    width: 800px;
+    height: 400px;
+    align-items: center;
+    top: 150px;
+    /*right: 500px;*/
+    justify-content: center;
+    position: fixed;
+    backdrop-filter: blur(.8px);
+    overflow: hidden;
+    z-index: 2;
+
+}
+.modalcontent{
+    padding: 30px 20px;
+    background-color: thistle;
+    height: 150px;
+    width: 400px;
+}
+
+.maincontainer{
+    min-height: 100%;
+    position: relative;
+}
+/* Content Card effect*/
+
+.container{
+    width: 97%;
+    margin: 10px auto;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    justify-content: space-between;
+    padding: 30px; 
+    min-height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    background: #1892BF;
+}
+.container .card{
+    position: relative;
+    max-width: 300px;
+    height: 215px; 
+    background: #fff;
+    margin: 90px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,.5);
+    transition: .3s ease-in-out;
+}
+.container .card:hover{
+    height: 350px;
+}
+.container .card .imgBx{
+    position: relative;
+    width: 260px;
+    height: 150px;
+    top: -60px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+.container .card .imgBx h2{
+    background: #00416a;
+    position: relative;
+    text-align: center;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.container .card .imgBx img{
+    max-width: 100%;
+    border-radius: 3px;
+}
+.container .card .content{
+    overflow-y: scroll;
+    height: 80%;
+    position: relative;
+    margin-top: -120px;
+    padding: 20px 15px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3 ease-in-out;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
+}
+.container .card .content::-webkit-scrollbar{
+    display: none;
+}
+.container .card .content .infos{
+   background:rgba(158, 152, 152, 0.363);
+   margin-top: 40px;
+   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.container .card .content .fav, .fav:focus{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-boder-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    color: #1892BF;
+    border-color: #1892BF;
+    background: transparent;
+    border: 1px solid ;
+    font-size: 18px;
+    width: 80px;
+    height: 43px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.container .card .content .fav:hover{
+    background: #3db4df;
+    color: #fff;
+    
+}
+    .material-icons{
+        color: #1892BF;
+    }
+.bookbtn button{
+        position: absolute;
+        bottom: 0;
+        right: 70px;
+        
+        display: inline-flex;
+        padding: 5px 20px;
+        background:rgb(38, 57, 77);
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.bookbtn button:before{
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 0px;
+        height: 0px;
+        background: #2196f3;
+}
+button a {
+    color: #fff;
+    letter-spacing: 1px;
+}
+.container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: .3s;
+}
+
+
+.warumwir{
+    height : 200px;
+    background: blue;
+}
+
+/*   Sections*/
+.sectiontitel{
+    text-align: center;
+}
+.titletext{
+    font-size: 2em;
+    position: relative;
+    margin: .5em auto 1em;
+    padding: 1em 1em .25em 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.titletext:after{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 300px;
+    height: 4px;
+    margin-left: -150px;
+    content: "";
+    background-color: black;
+}
+/*.sectiontitel{
+    position: relative;
+    background:red;
+    height: 50px;
+    width: 99%;
+    margin: 10px 10px;
+    align-items: center;
+    text-align: center;
+    float: left;
+    top: 0;
+    display: block;
+}*/
+.rezepte, .trainingplan{
+    width: 97%;
+    margin: 10px auto;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: .8;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    background: #1892BF;
+}
+
+.rezepte hr{
+    height: 0;
+    border-radius: 2px;
+    color: red;
+    border: 1px solid;
+    width: 90%;
+    margin: 10px auto;
+}
+.rezeptbehalter{
+    height: 300px;
+    width: 250px;
+    margin: 10px;
+    background: lightyellow;
+    text-align: center;
+    overflow: auto;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+.rezeptbild, .trainingsbild {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    
+}
+.rezeptbild img{
+    background-position: center;
+    background-size: cover;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    transition:.3s all ease-in-out;
+}
+.rezeptbild img:hover{
+    transform: scale(1.3);
+    transition-delay: .1s;
+}
+.rezeptbehalter h1{
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+    background:rgba(0, 0, 0, 0.07);
+    margin: 10px auto;
+    text-align: center;
+}
+.rezeptbehalter .fav{
+    float: left;
+    margin-left: 15px;
+}
+
+.rezeptbehalter .see{
+    float: right;
+    margin-right: 10px;
+}
+
+/* User POST REZEPT*/
+
+.behalter{
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    top: 50%;
+    left: 50%;
+    display: block;
+    border: 1px solid black;
+    height: auto;
+    overflow: hidden;
+    border-radius: 3px;
+    margin: 40px auto;
+    padding: 10px;
+    background: #8e9eab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    max-width: 80%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+  .imgcontainer{
+      text-align: center;
+  }
+  .imgcontainer img{
+    width:280px;
+    height:250px;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+  .behalter div{
+    margin: 10px auto;
+  }
+  .behalter h1{
+    font-family: RobotoMono;
+    text-align: center;
+    font-size: 25px;
+  }
+  .behalter p{
+    font-family: RobotoMono;
+    margin: auto auto;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .downloadbtn{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-right: 20px;
+    text-align: center;
+  }
+  .downloadbtn span{
+      font-size: 40px;
+      color:seagreen;
+      margin-right: 100px;
+      transition: .4s all ease-in-out;
+  }
+  .downloadbtn span:hover{
+    transform: scale(1.3);
+    color:slategrey;
+}
+/* Kmmentar und Likes*/
+.comslike, .comschreiben, .zeigkomms{
+    width: 90%;
+    height: 80px;
+    cursor: pointer;
+    
+}
+.comlikes{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.comlikes i{
+    margin : 15px 30px;
+    line-height: 30px;
+}
+.comlikes .likc, .comlikes .comc{
+    position: absolute;
+    font-size: 15px;
+    text-align: center;
+    padding: auto;
+    width: 24px;
+    height: 24px;
+    margin-left: -8px;
+    margin-top: -15px;
+    border-radius: 10%;
+    background:rgb(22, 81, 145);
+    color: black;
+    
+}
+
+.comschreiben{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.comschreiben form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+}
+.comschreiben form textarea{
+    width: 99%;
+    height: 40%;
+    resize: none;
+    font-size: 15px;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.comschreiben form button{
+    width: 100px;
+    text-align: center;
+    justify-content: center;
+    margin-left: 140px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border: none;
+}
+.zeigkomms{
+    height: 200px;
+    background: transparent;
+    }
+.zeigkomms div h2, span{
+    font-size: 18px;
+    font-weight: 100;
+}
+.zeigkomms p{
+    font-size: 18px;
+}   
+/*   SUChleiste */
+.search{
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 500px;
+    height: 40px;
+    position: absolute;
+    background: #444;
+    background: rgba(0,0,0,.2) ;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+.searchform input{
+    cursor: pointer;
+    width: 370px;
+    color:#ccc;
+    font-size: 19px;
+    border: 0;
+    float: left;
+    outline: none;
+    padding: 7px;
+    background: transparent;
+}
+.searchform span{
+    padding: 10px 5px;
+    color: black;
+    transition: .5s all ease-in-out;
+}
+.searchform span:hover{
+    transform: scale(1.3);
+    transition-delay: .1s;
+}
+.searchform button{
+    position: relative;
+    float: right;
+    cursor: pointer;
+    border: 0;
+    background-color:steelblue;
+    outline: none;
+    height: 40px;
+    border-radius: 0 3px 3px 0;
+    width: 100px;
+    color: black;
+    transition: .5s all ease-in-out;
+}
+.searchform button:hover{
+    background-color:rgb(22, 81, 145);
+    transform: scale(1.3);
+    border: 1px solid black;
+    border-radius: 2px;
+}

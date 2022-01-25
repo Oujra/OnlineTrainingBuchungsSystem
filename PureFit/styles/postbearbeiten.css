@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  color: unset;
+}
+
+main {
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.maindiv {
+  min-height: 100%;
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.form {
+  width: 500px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 30px;
+  margin-top: 100px;
+  background: #8E0E00;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#1F1C18), to(#8E0E00));
+  background: linear-gradient(to right, #1F1C18, #8E0E00);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-align: center;
+}
+
+.form .inputwrap {
+  margin-top: 15px;
+}
+
+.form .inputwrap input, .form .inputwrap textarea {
+  background: transparent;
+  border: 1px solid black;
+  height: 40px;
+  width: 100%;
+  margin-top: 10px;
+  outline: none;
+  padding-left: 5px;
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  resize: none;
+}
+
+.form .inputwrap input::-webkit-scrollbar, .form .inputwrap textarea::-webkit-scrollbar {
+  display: none;
+  /* for Chrome, Safari, and Opera */
+}
+
+.form .inputwrap .zb, .form .inputwrap .zt, .form .inputwrap .bs {
+  height: 110px;
+}
+
+.form .inputwrap .ub {
+  height: 250px;
+}
+
+.form .inputwrap .nw {
+  height: 50px;
+}
+
+.form .inputwrap span {
+  font-size: 24px;
+}
+
+.form .submitbtn {
+  border: none;
+  margin-top: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.form .del {
+  background-color: transparent;
+  color: red;
+  float: left;
+}
+/*# sourceMappingURL=postbearbeiten.css.map */

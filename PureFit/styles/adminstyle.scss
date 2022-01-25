@@ -1,0 +1,887 @@
+$menu-width-pc: 240px;
+$menu-width-tablet: 90px;
+$menu-width-smartphone: 230px;
+$ease : cubic-bezier(0.165, 0.84, 0.44, 1);
+$farbe: #505050;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-size: 24px;
+    color: unset;
+    
+}
+main{
+    min-width: 100%;
+    background-color:rgba(0, 0, 0, 0.9);
+}
+body{
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    padding-left: $menu-width-pc + 10;
+}
+html{
+    height: 100%;
+}
+.adminpage-header{
+    background: #403A3E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8b4e59, #403A3E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #924350, #403A3E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    .logo{
+        img{
+            margin: 10px;
+            height: 100px;
+            width: 100px;
+            border-radius: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            transition: .5s ease-in-out;
+            &:hover{
+                transform:rotate(12deg);
+            }        }
+    }
+    .admin-header-right{
+        
+        width: 150px;
+        float: right;
+        padding: 13px;
+      /*  #logout, #notification{
+            margin: auto 3px;
+            -webkit-text-stroke: 1px black;
+        }*/
+        .box{
+            display: flex;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            .fas{
+                color: #cecece;
+                line-height: 50px;
+            }
+            .logout{
+                width: 50px;
+                
+            }
+            .notification{
+                cursor: pointer;
+                background:rgba(0, 0, 0, 0.22);
+                width: 50px;
+                height: 50px;
+                border-radius: 30px;
+                box-sizing: border-box;
+                text-align: center;
+                box-shadow: 0 2px 5px rgba(0,0,0,.7);
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                
+                .fas{
+                    line-height: 50px;
+                    
+                }
+                .notcount{
+                    position: absolute;
+                    font-size: 13px;
+                    padding: 3px 5px;
+                    width: 23px;
+                    height: 23px;
+                    border-radius: 50%;
+                    background: #ff2c74;
+                }
+                ul{
+                    display: none;
+                    position: relative;
+                    z-index: 1;
+                    background: #0F2027;
+                    width: 114.5%;
+                    height: 350px;    
+                    right: 15px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+                    padding: 20px 10px;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    li{
+                        
+                        list-style: none;
+                        border-bottom: 3px solid white;
+                        padding: 10px;
+                        display: inline-block;
+                        max-height: 100%;
+                        overflow-y: scroll;
+                        -ms-overflow-style: none; /* IE und EDGE*/
+                        scrollbar-width: none; /* Firefox*/
+                        &::-webkit-scrollbar{ /* für Chrome, Safari und Opera*/
+                            display: none;
+                        }
+                        &:last-child{
+                            border-bottom: none;
+                            margin-bottom: 500px;
+                        }
+                        .icon{
+                            width: 50px;
+                            height: 50px;
+                            text-align: center;
+                            border-radius: 50%;
+                            line-height: 24px;
+                            .fas{
+                                font-size: 18px;
+                                margin-top: -7px;
+                            }
+                        }
+                        .text{
+                            
+                            margin-top: -100px;
+                            margin-left: 10px;
+                            font-size: 14px;
+                            font-family: sans-serif;
+                            &:hover{
+                                font-weight: bold;
+                                color: #ff2c74;
+                            }
+                        }
+                        
+                    }                
+                }
+                &:hover{
+                    background:rgba(158, 25, 25, 0.35);
+                    width: 240px;
+                    text-align: left;
+                    padding: 0 15px;
+                    border-bottom-left-radius:  0;
+                    border-bottom-right-radius:  0;
+                    .notcount{
+                        position: relative;
+                        background: transparent;
+                        font-size: 15px;
+                        top: -4px;  
+                        &:after{
+                            content: ' Benachrichtigungen';
+                            font-size: 10px;
+                        }
+                    }
+                    ul{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidemenu{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    width: $menu-width-pc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:5;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 6px, rgba(0, 0, 0, 0.9) 0px 3px 6px;
+
+    .s-m-t{
+        height: 50px;
+        .logout{
+            width: 100%;
+            height:30px;
+            align-content: center;
+            text-align: center;
+            a{
+                width: 60px;
+                height:100%;
+                span{
+                    padding: 5px;
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: crimson;
+                    }
+                }
+                
+            }
+        }
+    }
+    .profilinfo{
+        background: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 3px;
+        border-top: 2px solid #111;
+        height: 350px;
+        perspective: 1000px;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -5px;
+        .profilimg{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            overflow: hidden;
+            transform: translateY(30px) scale(0.5);
+            transform-origin: top;
+            img{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                object-fit: cover;
+            }
+        }
+        form{
+            width: 120px;
+            height:25px;
+            margin-top: 205px;
+            margin-left: 60px;
+            position: relative;
+            display: inline-block;
+            input{
+                &[type = "file"]{
+                    display: none;
+                }
+            }
+            label, button{
+                height: 100%;
+                border-style: none;
+                text-align: center;
+                margin: auto;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            label{
+               color: white;
+               width: 75%;
+               position: absolute;
+               background-color: #f5af09;
+               i{
+                   margin-bottom: 4px;
+               }
+            }
+            button{
+                width: 25%;
+                float: right;
+                background-color: seagreen;
+                i{  
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }   
+        .profilcontent{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 250px;
+            .details{
+                display: flex;
+                text-align: center;
+                h2{
+                    color: #fff;
+                    font-size: 1em;
+                    font-weight: 500;
+                    span{
+                        font-size: .8em;
+                        color:seashell;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+       
+    }
+    ul{
+        list-style: none;
+        padding: 1em 0;
+        margin: 0;
+        li{
+            position: relative;
+            padding: .9em 1em .5em 3em;
+            font-size: 16px;
+            font-weight: regular;
+            background-repeat: no-repeat;
+            background-position:left 15px center;
+            background-size: auto 20px;
+            transition: all .15s linear;
+            &:hover{
+                background-color: rgba(0,0,0,.3);
+            }
+            &:focus{
+                outline:none;
+            }
+           
+        }
+    }
+}
+.admin-main-container{
+    margin-top: 10px;
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    align-content: space-between;
+    padding: 10px 20px;
+    text-align: center;
+    
+/*---------------------Trainingsblock-------------------------------*/
+/*.sectiontitel{
+    position: relative;
+    font-size: 5em;
+    height: 50px;
+    width: 99%;
+    margin: 10px 10px;
+    align-items: center;
+    text-align: center;
+    float: left;
+    top: 0;
+    display: block;
+}*/
+.sectiontitel{
+    text-align: center;
+    .titletext{
+        font-size: 2em;
+        position: relative;
+        margin: .5em auto 1em;
+        padding: 1em 1em .25em 1em;
+        text-align: center;
+        text-transform: uppercase;
+        &:after{
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 240px;
+            height: 4px;
+            margin-left: -120px;
+            content: "";
+            background-color: white ;
+        }
+    }
+}
+    .trainingsblock, .trainingsplaene, .rezepte, .anfragen{
+        margin-top: 20px;
+        padding: 0 20px;
+        min-height: 100vh;
+        border: 1px solid black;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            margin: 10px;
+        }
+        .tbdiv, .tpbdiv, .frdiv, .detail, .del{
+            width: 20%;
+            float: right;
+            height: 40px;
+            margin-top: 18px;
+            color: blanchedalmond;
+            button{
+                float: right;
+                height: 100%;
+                width: 100%;
+                border: none;
+                background: #111;
+                
+                &:hover{
+                    background:#203A43;
+                }
+                
+            }  
+        }
+        .frdiv{
+            margin-top: 10px;
+        }
+        .tpbdiv{
+            margin-top: 139px;
+        }
+        .del{
+            color: red;
+            float: left;
+        }
+        .detail{
+            float: left;
+            font-size: 35px;
+            background:rgba(0, 0, 0, 0.22);
+            margin-top: 139px;
+            margin-left: 0;
+            &:hover{
+                background:royalblue;
+            }
+        }
+        .admin-content{
+            width: 220px;
+            height: 350px;
+            overflow-y: scroll;
+            margin:5px;
+            color: black;
+            display: inline-block;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */  
+            &::-webkit-scrollbar{
+            display: none;
+            
+            }
+           
+            .trainingimg{
+                background: lightblue;
+                width: 100%;
+                height: 150px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+               
+            }
+            .tpbdiv{
+                margin-top: 117px;
+            }
+            .detail{
+                float: left;
+                font-size: 35px;
+                background:rgba(0, 0, 0, 0.22);
+                margin-top: 117px;
+                margin-left: 0;
+                &:hover{
+                    background:royalblue;
+                }
+            }
+            
+        }
+        
+        .erstellen{
+                position: absolute;
+                right: -15px;
+                bottom: 15px;
+                padding: 10px 0;
+                margin: 10px 15px;
+                text-transform: uppercase;
+                border: 0;
+                letter-spacing: 4px;
+                color: #111;
+                background-color: transparent;
+                font-weight: 100;
+                font-size: 14px;
+	            transform: translate(-10%, -10%);
+                &:before,
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    height: 2px;
+                    transition: width 1s $ease;
+                }
+                &:before{
+                    width: 100%;
+                    background-color: lighten(#505050, 30%);
+                }
+                &:after{
+                    width: 0;
+                    background-color:teal;
+                }
+                &:hover:after{
+                    width: calc(100% + 1px);
+                }
+            }
+           
+        
+    }
+    
+    .anfragen{
+        background: #73C8A9;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .trainingsblock{
+        background: #304352;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    .trainingsplaene{
+        background: #2c3e50;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    .rezepte{
+        background: #8E0E00;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        .rezepte hr{
+            height: 0;
+            border-radius: 2px;
+            color: red;
+            border: 1px solid;
+            width: 90%;
+            margin: 10px auto;
+        }
+        .rezeptbehalter{
+            max-height: 350px;
+            width: 250px;
+            margin: 10px;
+            background: lightyellow;
+            text-align: center;
+            overflow: auto;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+        }
+        .rezeptbild, .trainingsbild {
+            width: 100%;
+            height: 60%;
+            overflow: hidden;
+            
+        }
+        .rezeptbild img{
+            background-position: center;
+            background-size: cover;
+            display: inline-flex;
+            width: 100%;
+            height: 100%;
+            transition:.3s all ease-in-out;
+        }
+        .rezeptbild img:hover{
+            transform: scale(1.3);
+            transition-delay: .1s;
+        }
+        .rezeptbehalter h1{
+            font-size: 20px;
+            width: 100%;
+            height: 60px;
+            background:rgba(0, 0, 0, 0.07);
+            color: black;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .detail{
+            float: left;
+            font-size: 35px;
+            background:rgba(0, 0, 0, 0.22);
+            margin-top: 10px;
+            &:hover{
+                background:royalblue;
+            }
+        }
+    }
+
+    /*----Anfragen-----*/
+    .anfragenkarte{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        width: 300px;
+        height: 200px;
+        margin: 20px;
+        flex-wrap: wrap;
+        color: black;
+        .anfragenbestatigen{
+            position: relative;
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            .anfrageaction{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height:20%;
+                background: #8b4e59;
+                form{
+                    background: #ccc;
+                    width: 100%;
+                    height: 100%;
+                    padding: 3px;
+                }
+            }
+        }
+    }
+}
+/*------MODAL Trainingsblock----------------*/
+.modal, .tpmodal, .frmodal{
+    display: none;
+    position: fixed;
+    top: 130px;
+    left: 600px;
+    
+    padding: 50px 100px;
+    align-items: center;
+    justify-content: center;
+    height: 900px;
+    width: 900px;
+    backdrop-filter: blur(.7px);
+    overflow: hidden;
+    z-index: 4;
+    
+    .modal-content, .modaltrainingplan, .modalfitnesrezept{
+        
+        position: relative;
+        padding: 20px 20px;
+        background: #0F2027;
+        width: 650px;
+        height: 650px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        .modal-header{
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid;
+        }
+        form{
+            height: 500px;
+            width: 600px;
+            
+          /*  background-color: #505050;*/
+            .inputBox{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                
+                .inputwrap{
+                    width: 50%;
+                    span{
+                        display: block;
+                        padding: 10px 0;
+                        font-size: 14px;
+                        margin-left: 10px;
+                    }
+                    input{
+                        border: none;
+                        border-radius: 2px;
+                        outline: none;
+                        text-transform: none;
+                        margin-bottom: 24px;
+                        margin-left: 10px;
+                        width: 270px;
+                        padding: 5px;
+                        font-size: 18px;
+                        color: black;
+                        cursor: pointer;
+                        
+                    }
+                }
+            }
+            .btnsubmit{
+                    
+                input{
+                    position: absolute;
+                    bottom: 11%;
+                    right: 6%;
+                    display: inline-block;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 12px;
+                    font-size: 15px;
+                    background-color:rgba(158, 25, 25, 0.35);
+                    box-shadow: 0.25rem 0.25rem rgb(0, 0, 0), -0.2rem -0.2rem #ccc;
+                    &:hover{
+                        box-shadow: -0.25rem -0.25rem rgb(0, 0, 0), 0.2rem 0.2rem #ccc;
+                    }
+                }
+                
+            }
+          
+            .trainingsnk{
+                display: flex;
+                padding: 10px 0;
+                
+                div{
+                    flex:1;
+                }
+                .tname{
+                    margin-right: 93px;
+                }
+            }
+            
+        }
+        
+    }
+    
+    .dismiss-btn{
+        background-color: red;
+        margin-top: 15px;
+        text-align: center;
+        button{
+            position: absolute;
+            bottom: 10px;
+            padding: 5px 10px;
+            background: #111;
+            color: #f5f5f5;
+            border: 1px solid #111;
+            font-size: 16px;
+            outline: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: #111;
+                background: #f5f5f5;
+                transform: translateY(-.2rem) ;
+            }
+            
+        }
+    }
+}
+.modal{
+    form{
+        .inputbild{
+            margin-right: 150px;
+            margin-top: 35px;
+            border: 1px solid #ccc;
+            
+            height: 40px;
+            trainsition: all .5s ease-in-out;
+            input{
+                display: none;
+            }
+            .bildhochladen{
+                font-size: 18px;
+                position: relative;
+                display: inline-block;
+                padding: 3px 12px;
+                cursor: pointer;
+            }
+            &:hover{
+                transform: scale(1.2);
+                background: lightblue;
+            }
+        }
+    }
+}
+
+/*-------Modal trainingsplan--------------*/
+.tpmodal, .frmodal{
+    
+    height: 900px;
+    width: 900px;
+    .modaltrainingplan{
+        width: 650px;
+        height: 600px;
+        form{
+            height: 300px;
+            width: 600px;
+            .ta{
+                background:rgba(0, 0, 0, 0.22);
+                overflow: auto;
+                width: 570px;
+                height: 250px;
+                border: 3px solid #cccccc;
+                padding: 5px;
+                outline: none;
+                margin-left: 10px;
+                resize: none;
+            }
+            
+            
+            
+        }
+    }
+}
+.tpmodal{
+    form{
+        .inputbild{
+            float: left;
+            margin-right: 250px;
+            margin-top: 300px;
+            border: 1px solid #ccc;
+            transition: all .5s ease-in-out;
+            input{
+                display: none;
+            }
+            .bildhochladen{
+                font-size: 18px;
+                position: relative;
+                display: inline-block;
+                padding: 6px 12px;
+                cursor: pointer;
+            }
+            &:hover{
+                transform: scale(1.2);
+                background: lightblue;
+            }
+        }
+    }
+}
+.frmodal{
+   
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        .inputBox{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            .zb, .zt, .nw{
+                overflow: auto;
+                margin-left: 10px;
+                position: absolute;
+                resize: none;
+                background: none;
+                font-size: 18px;
+                line-height: 25px;
+                padding: 10px;
+            }
+            .zt{
+                width: 270px;
+                height: 307px;
+            }
+            .zb{
+                width: 290px;
+                height: 345px;
+            }
+            .nw{
+                margin-top: 293px;
+                width: 290px;
+                height: 50px;
+            }
+           
+            
+        }
+        .inputbild{
+            margin-left: 10px;
+            margin-top: 330px;
+            border: 1px solid #ccc;
+            transition: all .5s ease-in-out;
+            input{
+                display: none;
+            }
+            .bildhochladen{
+                
+                font-size: 18px;
+                position: relative;
+                display: inline-block;
+                padding: 6px 12px;
+                cursor: pointer;
+            }
+            &:hover{
+                transform: scale(1.2);
+                background: lightblue;
+            }
+        }
+        
+    }
+    
+}

@@ -1,0 +1,244 @@
+.confirm-modal{
+    display: none;
+    width: 800px;
+    height: 400px;
+    align-items: center;
+    top: 150px;
+    /*right: 500px;*/
+    justify-content: center;
+    position: fixed;
+    backdrop-filter: blur(.8px);
+    overflow: hidden;
+    z-index: 2;
+
+    .modalcontent{
+        padding: 30px 20px;
+        background-color:skyblue;
+        height: 350px;
+        width: 600px;
+        .modheader{
+            align-items: baseline;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+.sidemenu {
+    .löschen{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+}
+.user-main-container{
+    position: relative;
+    margin-top: 30px;
+    padding: 10px;
+    min-height: 100%;
+    width: 100%;
+    .sectiontitel{
+        text-align: center;
+        .titletext{
+            font-size: 2em;
+            position: relative;
+            margin: .5em auto 1em;
+            padding: 1em 1em .25em 1em;
+            text-align: center;
+            text-transform: uppercase;
+            &:after{
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 240px;
+                height: 4px;
+                margin-left: -120px;
+                content: "";
+                background-color: white ;
+            }
+        }
+    }
+    .anfragen-section, .training, .fav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        max-width: 100%;
+        min-height: 600px;
+        height: auto;
+        padding: 10px;
+
+        .anfragen{
+            position: relative;
+            width: 210px;
+            height: 250px;
+            transition: all 2s ease-in-out;
+            .trainingimg{
+                height: 120px;
+                background: burlywood;
+                transition: all 1s ease-in-out;
+                &:hover{
+                    transform: scale(1.2);
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    
+                }
+            }
+            .trainingsinfo{
+                text-align: center;
+                padding: 10px;
+                span{
+                    
+                }
+                h1, p{
+                    font-size: 20px;
+                    font-weight: 100;
+                }
+            }
+            .anulieren{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                button{
+                    width: 100%;
+                    border: none;
+                    color: black;
+                    span{
+                        transition: all 1s ease-in-out;
+                        &:hover{
+                            transform: scale(1.7);
+                            color: red;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+
+/*    Taining anulieren Modal */
+.training-delete-modal{
+    display: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    justify-content: center;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.4);
+    transition: .5s;
+    padding: 20px;
+    top: 0;
+    color: black;
+    .content{
+        position: fixed;
+        top: 10%;
+        left: 40%;
+        width: 500px;
+        height: 210px;
+        padding: 30px;
+        margin: 150px 200px 0 0 ;
+        background: #c2e59c;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        justify-content: center;
+        text-align: center;
+        display:block;
+        animation-name: animatetop;
+        animation-duration: .4s;
+        border: 1px solid #888;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0, .2), 0 6px 20px 0 rgba(0,0,0, .19);
+        .headermodal{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 30px;
+            i{
+                color: red;
+            }
+            h2{
+                
+            }
+        }
+        .modal-body{
+            width: 450px;
+            text-align: center;
+            margin-top: 40px;
+            position: absolute;
+            button{
+                position: absolute;
+                margin-left: -80px;
+                margin-top: 10px;
+                width: 150px;
+                font-size: 14px;
+                font-weight: 200;
+                letter-spacing: 1px;
+                padding: 13px 20px 13px;
+                outline: 0;
+                border: 1px solid black;
+                background-color: rgba(0, 0, 0, 0);
+                 user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                &::after {
+                    content: "";
+                    background-color: #bb2124;
+                    width: 100%;
+                    z-index: -1;
+                    position: absolute;
+                    height: 100%;
+                    top: 7px;
+                    left: 7px;
+                    transition: 0.2s;
+                    &:hover:after{
+                        top: 0px;
+                        left: 0px;
+                      }
+                  }
+                  
+            }
+        }
+        
+    }
+}
+.anfragen-section{
+    background: #525252;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3d72b4, #525252);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3d72b4, #525252); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.training{
+    display: inline-flex;
+    flex-direction: row;
+    background: #304352;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d7d2cc, #304352);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d7d2cc, #304352); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    .admin-content{
+        width: 500px;
+        height: 100px;
+        background-color: darkblue;
+
+    }
+}
+.fav{
+    display: inline-block;
+    background: #6A9113;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #141517, #6A9113);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #141517, #6A9113); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+@keyframes animatetop{
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}

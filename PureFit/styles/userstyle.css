@@ -1,0 +1,332 @@
+@charset "UTF-8";
+.confirm-modal {
+  display: none;
+  width: 800px;
+  height: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 150px;
+  /*right: 500px;*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  -webkit-backdrop-filter: blur(0.8px);
+          backdrop-filter: blur(0.8px);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.confirm-modal .modalcontent {
+  padding: 30px 20px;
+  background-color: skyblue;
+  height: 350px;
+  width: 600px;
+}
+
+.confirm-modal .modalcontent .modheader {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sidemenu .löschen {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.user-main-container {
+  position: relative;
+  margin-top: 30px;
+  padding: 10px;
+  min-height: 100%;
+  width: 100%;
+}
+
+.user-main-container .sectiontitel {
+  text-align: center;
+}
+
+.user-main-container .sectiontitel .titletext {
+  font-size: 2em;
+  position: relative;
+  margin: .5em auto 1em;
+  padding: 1em 1em .25em 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.user-main-container .sectiontitel .titletext:after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 240px;
+  height: 4px;
+  margin-left: -120px;
+  content: "";
+  background-color: white;
+}
+
+.user-main-container .anfragen-section, .user-main-container .training, .user-main-container .fav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 100%;
+  min-height: 600px;
+  height: auto;
+  padding: 10px;
+}
+
+.user-main-container .anfragen-section .anfragen, .user-main-container .training .anfragen, .user-main-container .fav .anfragen {
+  position: relative;
+  width: 210px;
+  height: 250px;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.user-main-container .anfragen-section .anfragen .trainingimg, .user-main-container .training .anfragen .trainingimg, .user-main-container .fav .anfragen .trainingimg {
+  height: 120px;
+  background: burlywood;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.user-main-container .anfragen-section .anfragen .trainingimg:hover, .user-main-container .training .anfragen .trainingimg:hover, .user-main-container .fav .anfragen .trainingimg:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.user-main-container .anfragen-section .anfragen .trainingimg img, .user-main-container .training .anfragen .trainingimg img, .user-main-container .fav .anfragen .trainingimg img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-main-container .anfragen-section .anfragen .trainingsinfo, .user-main-container .training .anfragen .trainingsinfo, .user-main-container .fav .anfragen .trainingsinfo {
+  text-align: center;
+  padding: 10px;
+}
+
+.user-main-container .anfragen-section .anfragen .trainingsinfo h1, .user-main-container .anfragen-section .anfragen .trainingsinfo p, .user-main-container .training .anfragen .trainingsinfo h1, .user-main-container .training .anfragen .trainingsinfo p, .user-main-container .fav .anfragen .trainingsinfo h1, .user-main-container .fav .anfragen .trainingsinfo p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.user-main-container .anfragen-section .anfragen .anulieren, .user-main-container .training .anfragen .anulieren, .user-main-container .fav .anfragen .anulieren {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.user-main-container .anfragen-section .anfragen .anulieren button, .user-main-container .training .anfragen .anulieren button, .user-main-container .fav .anfragen .anulieren button {
+  width: 100%;
+  border: none;
+  color: black;
+}
+
+.user-main-container .anfragen-section .anfragen .anulieren button span, .user-main-container .training .anfragen .anulieren button span, .user-main-container .fav .anfragen .anulieren button span {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.user-main-container .anfragen-section .anfragen .anulieren button span:hover, .user-main-container .training .anfragen .anulieren button span:hover, .user-main-container .fav .anfragen .anulieren button span:hover {
+  -webkit-transform: scale(1.7);
+          transform: scale(1.7);
+  color: red;
+}
+
+.user-main-container .anfragen-section .anfragen:hover, .user-main-container .training .anfragen:hover, .user-main-container .fav .anfragen:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/*    Taining anulieren Modal */
+.training-delete-modal {
+  display: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  z-index: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: black;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: .5s;
+  transition: .5s;
+  padding: 20px;
+  top: 0;
+  color: black;
+}
+
+.training-delete-modal .content {
+  position: fixed;
+  top: 10%;
+  left: 40%;
+  width: 500px;
+  height: 210px;
+  padding: 30px;
+  margin: 150px 200px 0 0;
+  background: #c2e59c;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#64b3f4), to(#c2e59c));
+  background: linear-gradient(to right, #64b3f4, #c2e59c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  display: block;
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  border: 1px solid #888;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.training-delete-modal .content .headermodal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.training-delete-modal .content .headermodal i {
+  color: red;
+}
+
+.training-delete-modal .content .modal-body {
+  width: 450px;
+  text-align: center;
+  margin-top: 40px;
+  position: absolute;
+}
+
+.training-delete-modal .content .modal-body button {
+  position: absolute;
+  margin-left: -80px;
+  margin-top: 10px;
+  width: 150px;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0);
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+.training-delete-modal .content .modal-body button::after {
+  content: "";
+  background-color: #bb2124;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.training-delete-modal .content .modal-body button::after:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.anfragen-section {
+  background: #525252;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#3d72b4), to(#525252));
+  background: linear-gradient(to right, #3d72b4, #525252);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.training {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: #304352;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#d7d2cc), to(#304352));
+  background: linear-gradient(to right, #d7d2cc, #304352);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.training .admin-content {
+  width: 500px;
+  height: 100px;
+  background-color: darkblue;
+}
+
+.fav {
+  display: inline-block;
+  background: #6A9113;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#141517), to(#6A9113));
+  background: linear-gradient(to right, #141517, #6A9113);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=userstyle.css.map */

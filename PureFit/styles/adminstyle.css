@@ -1,0 +1,1057 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  color: unset;
+}
+
+main {
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  padding-left: 250px;
+}
+
+html {
+  height: 100%;
+}
+
+.adminpage-header {
+  background: #403A3E;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#924350), to(#403A3E));
+  background: linear-gradient(to right, #924350, #403A3E);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.adminpage-header .logo img {
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.adminpage-header .logo img:hover {
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+.adminpage-header .admin-header-right {
+  width: 150px;
+  float: right;
+  padding: 13px;
+  /*  #logout, #notification{
+            margin: auto 3px;
+            -webkit-text-stroke: 1px black;
+        }*/
+}
+
+.adminpage-header .admin-header-right .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.adminpage-header .admin-header-right .box .fas {
+  color: #cecece;
+  line-height: 50px;
+}
+
+.adminpage-header .admin-header-right .box .logout {
+  width: 50px;
+}
+
+.adminpage-header .admin-header-right .box .notification {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.22);
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.adminpage-header .admin-header-right .box .notification .fas {
+  line-height: 50px;
+}
+
+.adminpage-header .admin-header-right .box .notification .notcount {
+  position: absolute;
+  font-size: 13px;
+  padding: 3px 5px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #ff2c74;
+}
+
+.adminpage-header .admin-header-right .box .notification ul {
+  display: none;
+  position: relative;
+  z-index: 1;
+  background: #0F2027;
+  width: 114.5%;
+  height: 350px;
+  right: 15px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.adminpage-header .admin-header-right .box .notification ul li {
+  list-style: none;
+  border-bottom: 3px solid white;
+  padding: 10px;
+  display: inline-block;
+  max-height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE und EDGE*/
+  scrollbar-width: none;
+  /* Firefox*/
+}
+
+.adminpage-header .admin-header-right .box .notification ul li::-webkit-scrollbar {
+  /* für Chrome, Safari und Opera*/
+  display: none;
+}
+
+.adminpage-header .admin-header-right .box .notification ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 500px;
+}
+
+.adminpage-header .admin-header-right .box .notification ul li .icon {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 24px;
+}
+
+.adminpage-header .admin-header-right .box .notification ul li .icon .fas {
+  font-size: 18px;
+  margin-top: -7px;
+}
+
+.adminpage-header .admin-header-right .box .notification ul li .text {
+  margin-top: -100px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.adminpage-header .admin-header-right .box .notification ul li .text:hover {
+  font-weight: bold;
+  color: #ff2c74;
+}
+
+.adminpage-header .admin-header-right .box .notification:hover {
+  background: rgba(158, 25, 25, 0.35);
+  width: 240px;
+  text-align: left;
+  padding: 0 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.adminpage-header .admin-header-right .box .notification:hover .notcount {
+  position: relative;
+  background: transparent;
+  font-size: 15px;
+  top: -4px;
+}
+
+.adminpage-header .admin-header-right .box .notification:hover .notcount:after {
+  content: ' Benachrichtigungen';
+  font-size: 10px;
+}
+
+.adminpage-header .admin-header-right .box .notification:hover ul {
+  display: block;
+}
+
+.sidemenu {
+  background: #0F2027;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#2C5364), color-stop(#203A43), to(#0F2027));
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  outline: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 6px, rgba(0, 0, 0, 0.9) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 6px, rgba(0, 0, 0, 0.9) 0px 3px 6px;
+}
+
+.sidemenu .s-m-t {
+  height: 50px;
+}
+
+.sidemenu .s-m-t .logout {
+  width: 100%;
+  height: 30px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+}
+
+.sidemenu .s-m-t .logout a {
+  width: 60px;
+  height: 100%;
+}
+
+.sidemenu .s-m-t .logout a span {
+  padding: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.sidemenu .s-m-t .logout a span:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: crimson;
+}
+
+.sidemenu .profilinfo {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 3px;
+  border-top: 2px solid #111;
+  height: 350px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -5px;
+          box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -5px;
+}
+
+.sidemenu .profilinfo .profilimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  -webkit-transform: translateY(30px) scale(0.5);
+          transform: translateY(30px) scale(0.5);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+.sidemenu .profilinfo .profilimg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sidemenu .profilinfo form {
+  width: 120px;
+  height: 25px;
+  margin-top: 205px;
+  margin-left: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.sidemenu .profilinfo form input[type="file"] {
+  display: none;
+}
+
+.sidemenu .profilinfo form label, .sidemenu .profilinfo form button {
+  height: 100%;
+  border-style: none;
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidemenu .profilinfo form label {
+  color: white;
+  width: 75%;
+  position: absolute;
+  background-color: #f5af09;
+}
+
+.sidemenu .profilinfo form label i {
+  margin-bottom: 4px;
+}
+
+.sidemenu .profilinfo form button {
+  width: 25%;
+  float: right;
+  background-color: seagreen;
+}
+
+.sidemenu .profilinfo form button i {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.sidemenu .profilinfo .profilcontent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 250px;
+}
+
+.sidemenu .profilinfo .profilcontent .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.sidemenu .profilinfo .profilcontent .details h2 {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.sidemenu .profilinfo .profilcontent .details h2 span {
+  font-size: .8em;
+  color: seashell;
+  font-weight: 400;
+}
+
+.sidemenu ul {
+  list-style: none;
+  padding: 1em 0;
+  margin: 0;
+}
+
+.sidemenu ul li {
+  position: relative;
+  padding: .9em 1em .5em 3em;
+  font-size: 16px;
+  font-weight: regular;
+  background-repeat: no-repeat;
+  background-position: left 15px center;
+  background-size: auto 20px;
+  -webkit-transition: all .15s linear;
+  transition: all .15s linear;
+}
+
+.sidemenu ul li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sidemenu ul li:focus {
+  outline: none;
+}
+
+.admin-main-container {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 100%;
+  display: block;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  padding: 10px 20px;
+  text-align: center;
+  /*---------------------Trainingsblock-------------------------------*/
+  /*.sectiontitel{
+    position: relative;
+    font-size: 5em;
+    height: 50px;
+    width: 99%;
+    margin: 10px 10px;
+    align-items: center;
+    text-align: center;
+    float: left;
+    top: 0;
+    display: block;
+}*/
+  /*----Anfragen-----*/
+}
+
+.admin-main-container .sectiontitel {
+  text-align: center;
+}
+
+.admin-main-container .sectiontitel .titletext {
+  font-size: 2em;
+  position: relative;
+  margin: .5em auto 1em;
+  padding: 1em 1em .25em 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.admin-main-container .sectiontitel .titletext:after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 240px;
+  height: 4px;
+  margin-left: -120px;
+  content: "";
+  background-color: white;
+}
+
+.admin-main-container .trainingsblock, .admin-main-container .trainingsplaene, .admin-main-container .rezepte, .admin-main-container .anfragen {
+  margin-top: 20px;
+  padding: 0 20px;
+  min-height: 100vh;
+  border: 1px solid black;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.admin-main-container .trainingsblock h1, .admin-main-container .trainingsplaene h1, .admin-main-container .rezepte h1, .admin-main-container .anfragen h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.admin-main-container .trainingsblock .tbdiv, .admin-main-container .trainingsblock .tpbdiv, .admin-main-container .trainingsblock .frdiv, .admin-main-container .trainingsblock .detail, .admin-main-container .trainingsblock .del, .admin-main-container .trainingsplaene .tbdiv, .admin-main-container .trainingsplaene .tpbdiv, .admin-main-container .trainingsplaene .frdiv, .admin-main-container .trainingsplaene .detail, .admin-main-container .trainingsplaene .del, .admin-main-container .rezepte .tbdiv, .admin-main-container .rezepte .tpbdiv, .admin-main-container .rezepte .frdiv, .admin-main-container .rezepte .detail, .admin-main-container .rezepte .del, .admin-main-container .anfragen .tbdiv, .admin-main-container .anfragen .tpbdiv, .admin-main-container .anfragen .frdiv, .admin-main-container .anfragen .detail, .admin-main-container .anfragen .del {
+  width: 20%;
+  float: right;
+  height: 40px;
+  margin-top: 18px;
+  color: blanchedalmond;
+}
+
+.admin-main-container .trainingsblock .tbdiv button, .admin-main-container .trainingsblock .tpbdiv button, .admin-main-container .trainingsblock .frdiv button, .admin-main-container .trainingsblock .detail button, .admin-main-container .trainingsblock .del button, .admin-main-container .trainingsplaene .tbdiv button, .admin-main-container .trainingsplaene .tpbdiv button, .admin-main-container .trainingsplaene .frdiv button, .admin-main-container .trainingsplaene .detail button, .admin-main-container .trainingsplaene .del button, .admin-main-container .rezepte .tbdiv button, .admin-main-container .rezepte .tpbdiv button, .admin-main-container .rezepte .frdiv button, .admin-main-container .rezepte .detail button, .admin-main-container .rezepte .del button, .admin-main-container .anfragen .tbdiv button, .admin-main-container .anfragen .tpbdiv button, .admin-main-container .anfragen .frdiv button, .admin-main-container .anfragen .detail button, .admin-main-container .anfragen .del button {
+  float: right;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: #111;
+}
+
+.admin-main-container .trainingsblock .tbdiv button:hover, .admin-main-container .trainingsblock .tpbdiv button:hover, .admin-main-container .trainingsblock .frdiv button:hover, .admin-main-container .trainingsblock .detail button:hover, .admin-main-container .trainingsblock .del button:hover, .admin-main-container .trainingsplaene .tbdiv button:hover, .admin-main-container .trainingsplaene .tpbdiv button:hover, .admin-main-container .trainingsplaene .frdiv button:hover, .admin-main-container .trainingsplaene .detail button:hover, .admin-main-container .trainingsplaene .del button:hover, .admin-main-container .rezepte .tbdiv button:hover, .admin-main-container .rezepte .tpbdiv button:hover, .admin-main-container .rezepte .frdiv button:hover, .admin-main-container .rezepte .detail button:hover, .admin-main-container .rezepte .del button:hover, .admin-main-container .anfragen .tbdiv button:hover, .admin-main-container .anfragen .tpbdiv button:hover, .admin-main-container .anfragen .frdiv button:hover, .admin-main-container .anfragen .detail button:hover, .admin-main-container .anfragen .del button:hover {
+  background: #203A43;
+}
+
+.admin-main-container .trainingsblock .frdiv, .admin-main-container .trainingsplaene .frdiv, .admin-main-container .rezepte .frdiv, .admin-main-container .anfragen .frdiv {
+  margin-top: 10px;
+}
+
+.admin-main-container .trainingsblock .tpbdiv, .admin-main-container .trainingsplaene .tpbdiv, .admin-main-container .rezepte .tpbdiv, .admin-main-container .anfragen .tpbdiv {
+  margin-top: 139px;
+}
+
+.admin-main-container .trainingsblock .del, .admin-main-container .trainingsplaene .del, .admin-main-container .rezepte .del, .admin-main-container .anfragen .del {
+  color: red;
+  float: left;
+}
+
+.admin-main-container .trainingsblock .detail, .admin-main-container .trainingsplaene .detail, .admin-main-container .rezepte .detail, .admin-main-container .anfragen .detail {
+  float: left;
+  font-size: 35px;
+  background: rgba(0, 0, 0, 0.22);
+  margin-top: 139px;
+  margin-left: 0;
+}
+
+.admin-main-container .trainingsblock .detail:hover, .admin-main-container .trainingsplaene .detail:hover, .admin-main-container .rezepte .detail:hover, .admin-main-container .anfragen .detail:hover {
+  background: royalblue;
+}
+
+.admin-main-container .trainingsblock .admin-content, .admin-main-container .trainingsplaene .admin-content, .admin-main-container .rezepte .admin-content, .admin-main-container .anfragen .admin-content {
+  width: 220px;
+  height: 350px;
+  overflow-y: scroll;
+  margin: 5px;
+  color: black;
+  display: inline-block;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.admin-main-container .trainingsblock .admin-content::-webkit-scrollbar, .admin-main-container .trainingsplaene .admin-content::-webkit-scrollbar, .admin-main-container .rezepte .admin-content::-webkit-scrollbar, .admin-main-container .anfragen .admin-content::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-main-container .trainingsblock .admin-content .trainingimg, .admin-main-container .trainingsplaene .admin-content .trainingimg, .admin-main-container .rezepte .admin-content .trainingimg, .admin-main-container .anfragen .admin-content .trainingimg {
+  background: lightblue;
+  width: 100%;
+  height: 150px;
+}
+
+.admin-main-container .trainingsblock .admin-content .trainingimg img, .admin-main-container .trainingsplaene .admin-content .trainingimg img, .admin-main-container .rezepte .admin-content .trainingimg img, .admin-main-container .anfragen .admin-content .trainingimg img {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-main-container .trainingsblock .admin-content .tpbdiv, .admin-main-container .trainingsplaene .admin-content .tpbdiv, .admin-main-container .rezepte .admin-content .tpbdiv, .admin-main-container .anfragen .admin-content .tpbdiv {
+  margin-top: 117px;
+}
+
+.admin-main-container .trainingsblock .admin-content .detail, .admin-main-container .trainingsplaene .admin-content .detail, .admin-main-container .rezepte .admin-content .detail, .admin-main-container .anfragen .admin-content .detail {
+  float: left;
+  font-size: 35px;
+  background: rgba(0, 0, 0, 0.22);
+  margin-top: 117px;
+  margin-left: 0;
+}
+
+.admin-main-container .trainingsblock .admin-content .detail:hover, .admin-main-container .trainingsplaene .admin-content .detail:hover, .admin-main-container .rezepte .admin-content .detail:hover, .admin-main-container .anfragen .admin-content .detail:hover {
+  background: royalblue;
+}
+
+.admin-main-container .trainingsblock .erstellen, .admin-main-container .trainingsplaene .erstellen, .admin-main-container .rezepte .erstellen, .admin-main-container .anfragen .erstellen {
+  position: absolute;
+  right: -15px;
+  bottom: 15px;
+  padding: 10px 0;
+  margin: 10px 15px;
+  text-transform: uppercase;
+  border: 0;
+  letter-spacing: 4px;
+  color: #111;
+  background-color: transparent;
+  font-weight: 100;
+  font-size: 14px;
+  -webkit-transform: translate(-10%, -10%);
+          transform: translate(-10%, -10%);
+}
+
+.admin-main-container .trainingsblock .erstellen:before, .admin-main-container .trainingsblock .erstellen:after, .admin-main-container .trainingsplaene .erstellen:before, .admin-main-container .trainingsplaene .erstellen:after, .admin-main-container .rezepte .erstellen:before, .admin-main-container .rezepte .erstellen:after, .admin-main-container .anfragen .erstellen:before, .admin-main-container .anfragen .erstellen:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  -webkit-transition: width 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: width 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.admin-main-container .trainingsblock .erstellen:before, .admin-main-container .trainingsplaene .erstellen:before, .admin-main-container .rezepte .erstellen:before, .admin-main-container .anfragen .erstellen:before {
+  width: 100%;
+  background-color: #9d9d9d;
+}
+
+.admin-main-container .trainingsblock .erstellen:after, .admin-main-container .trainingsplaene .erstellen:after, .admin-main-container .rezepte .erstellen:after, .admin-main-container .anfragen .erstellen:after {
+  width: 0;
+  background-color: teal;
+}
+
+.admin-main-container .trainingsblock .erstellen:hover:after, .admin-main-container .trainingsplaene .erstellen:hover:after, .admin-main-container .rezepte .erstellen:hover:after, .admin-main-container .anfragen .erstellen:hover:after {
+  width: calc(100% + 1px);
+}
+
+.admin-main-container .anfragen {
+  background: #73C8A9;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#373B44), to(#73C8A9));
+  background: linear-gradient(to right, #373B44, #73C8A9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.admin-main-container .trainingsblock {
+  background: #304352;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#d7d2cc), to(#304352));
+  background: linear-gradient(to right, #d7d2cc, #304352);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.admin-main-container .trainingsplaene {
+  background: #2c3e50;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#3498db), to(#2c3e50));
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.admin-main-container .rezepte {
+  background: #8E0E00;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#1F1C18), to(#8E0E00));
+  background: linear-gradient(to right, #1F1C18, #8E0E00);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.admin-main-container .rezepte .rezepte hr {
+  height: 0;
+  border-radius: 2px;
+  color: red;
+  border: 1px solid;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.admin-main-container .rezepte .rezeptbehalter {
+  max-height: 350px;
+  width: 250px;
+  margin: 10px;
+  background: lightyellow;
+  text-align: center;
+  overflow: auto;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+          box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.admin-main-container .rezepte .rezeptbild, .admin-main-container .rezepte .trainingsbild {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.admin-main-container .rezepte .rezeptbild img {
+  background-position: center;
+  background-size: cover;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+.admin-main-container .rezepte .rezeptbild img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.admin-main-container .rezepte .rezeptbehalter h1 {
+  font-size: 20px;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.07);
+  color: black;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.admin-main-container .rezepte .detail {
+  float: left;
+  font-size: 35px;
+  background: rgba(0, 0, 0, 0.22);
+  margin-top: 10px;
+}
+
+.admin-main-container .rezepte .detail:hover {
+  background: royalblue;
+}
+
+.admin-main-container .anfragenkarte {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 1px solid black;
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: black;
+}
+
+.admin-main-container .anfragenkarte .anfragenbestatigen {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-main-container .anfragenkarte .anfragenbestatigen .anfrageaction {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 20%;
+  background: #8b4e59;
+}
+
+.admin-main-container .anfragenkarte .anfragenbestatigen .anfrageaction form {
+  background: #ccc;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+}
+
+/*------MODAL Trainingsblock----------------*/
+.modal, .tpmodal, .frmodal {
+  display: none;
+  position: fixed;
+  top: 130px;
+  left: 600px;
+  padding: 50px 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 900px;
+  width: 900px;
+  -webkit-backdrop-filter: blur(0.7px);
+          backdrop-filter: blur(0.7px);
+  overflow: hidden;
+  z-index: 4;
+}
+
+.modal .modal-content, .modal .modaltrainingplan, .modal .modalfitnesrezept, .tpmodal .modal-content, .tpmodal .modaltrainingplan, .tpmodal .modalfitnesrezept, .frmodal .modal-content, .frmodal .modaltrainingplan, .frmodal .modalfitnesrezept {
+  position: relative;
+  padding: 20px 20px;
+  background: #0F2027;
+  width: 650px;
+  height: 650px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modal .modal-content .modal-header, .modal .modaltrainingplan .modal-header, .modal .modalfitnesrezept .modal-header, .tpmodal .modal-content .modal-header, .tpmodal .modaltrainingplan .modal-header, .tpmodal .modalfitnesrezept .modal-header, .frmodal .modal-content .modal-header, .frmodal .modaltrainingplan .modal-header, .frmodal .modalfitnesrezept .modal-header {
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+}
+
+.modal .modal-content form, .modal .modaltrainingplan form, .modal .modalfitnesrezept form, .tpmodal .modal-content form, .tpmodal .modaltrainingplan form, .tpmodal .modalfitnesrezept form, .frmodal .modal-content form, .frmodal .modaltrainingplan form, .frmodal .modalfitnesrezept form {
+  height: 500px;
+  width: 600px;
+  /*  background-color: #505050;*/
+}
+
+.modal .modal-content form .inputBox, .modal .modaltrainingplan form .inputBox, .modal .modalfitnesrezept form .inputBox, .tpmodal .modal-content form .inputBox, .tpmodal .modaltrainingplan form .inputBox, .tpmodal .modalfitnesrezept form .inputBox, .frmodal .modal-content form .inputBox, .frmodal .modaltrainingplan form .inputBox, .frmodal .modalfitnesrezept form .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal .modal-content form .inputBox .inputwrap, .modal .modaltrainingplan form .inputBox .inputwrap, .modal .modalfitnesrezept form .inputBox .inputwrap, .tpmodal .modal-content form .inputBox .inputwrap, .tpmodal .modaltrainingplan form .inputBox .inputwrap, .tpmodal .modalfitnesrezept form .inputBox .inputwrap, .frmodal .modal-content form .inputBox .inputwrap, .frmodal .modaltrainingplan form .inputBox .inputwrap, .frmodal .modalfitnesrezept form .inputBox .inputwrap {
+  width: 50%;
+}
+
+.modal .modal-content form .inputBox .inputwrap span, .modal .modaltrainingplan form .inputBox .inputwrap span, .modal .modalfitnesrezept form .inputBox .inputwrap span, .tpmodal .modal-content form .inputBox .inputwrap span, .tpmodal .modaltrainingplan form .inputBox .inputwrap span, .tpmodal .modalfitnesrezept form .inputBox .inputwrap span, .frmodal .modal-content form .inputBox .inputwrap span, .frmodal .modaltrainingplan form .inputBox .inputwrap span, .frmodal .modalfitnesrezept form .inputBox .inputwrap span {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.modal .modal-content form .inputBox .inputwrap input, .modal .modaltrainingplan form .inputBox .inputwrap input, .modal .modalfitnesrezept form .inputBox .inputwrap input, .tpmodal .modal-content form .inputBox .inputwrap input, .tpmodal .modaltrainingplan form .inputBox .inputwrap input, .tpmodal .modalfitnesrezept form .inputBox .inputwrap input, .frmodal .modal-content form .inputBox .inputwrap input, .frmodal .modaltrainingplan form .inputBox .inputwrap input, .frmodal .modalfitnesrezept form .inputBox .inputwrap input {
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  text-transform: none;
+  margin-bottom: 24px;
+  margin-left: 10px;
+  width: 270px;
+  padding: 5px;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+
+.modal .modal-content form .btnsubmit input, .modal .modaltrainingplan form .btnsubmit input, .modal .modalfitnesrezept form .btnsubmit input, .tpmodal .modal-content form .btnsubmit input, .tpmodal .modaltrainingplan form .btnsubmit input, .tpmodal .modalfitnesrezept form .btnsubmit input, .frmodal .modal-content form .btnsubmit input, .frmodal .modaltrainingplan form .btnsubmit input, .frmodal .modalfitnesrezept form .btnsubmit input {
+  position: absolute;
+  bottom: 11%;
+  right: 6%;
+  display: inline-block;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 15px;
+  background-color: rgba(158, 25, 25, 0.35);
+  -webkit-box-shadow: 0.25rem 0.25rem black, -0.2rem -0.2rem #ccc;
+          box-shadow: 0.25rem 0.25rem black, -0.2rem -0.2rem #ccc;
+}
+
+.modal .modal-content form .btnsubmit input:hover, .modal .modaltrainingplan form .btnsubmit input:hover, .modal .modalfitnesrezept form .btnsubmit input:hover, .tpmodal .modal-content form .btnsubmit input:hover, .tpmodal .modaltrainingplan form .btnsubmit input:hover, .tpmodal .modalfitnesrezept form .btnsubmit input:hover, .frmodal .modal-content form .btnsubmit input:hover, .frmodal .modaltrainingplan form .btnsubmit input:hover, .frmodal .modalfitnesrezept form .btnsubmit input:hover {
+  -webkit-box-shadow: -0.25rem -0.25rem black, 0.2rem 0.2rem #ccc;
+          box-shadow: -0.25rem -0.25rem black, 0.2rem 0.2rem #ccc;
+}
+
+.modal .modal-content form .trainingsnk, .modal .modaltrainingplan form .trainingsnk, .modal .modalfitnesrezept form .trainingsnk, .tpmodal .modal-content form .trainingsnk, .tpmodal .modaltrainingplan form .trainingsnk, .tpmodal .modalfitnesrezept form .trainingsnk, .frmodal .modal-content form .trainingsnk, .frmodal .modaltrainingplan form .trainingsnk, .frmodal .modalfitnesrezept form .trainingsnk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+}
+
+.modal .modal-content form .trainingsnk div, .modal .modaltrainingplan form .trainingsnk div, .modal .modalfitnesrezept form .trainingsnk div, .tpmodal .modal-content form .trainingsnk div, .tpmodal .modaltrainingplan form .trainingsnk div, .tpmodal .modalfitnesrezept form .trainingsnk div, .frmodal .modal-content form .trainingsnk div, .frmodal .modaltrainingplan form .trainingsnk div, .frmodal .modalfitnesrezept form .trainingsnk div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.modal .modal-content form .trainingsnk .tname, .modal .modaltrainingplan form .trainingsnk .tname, .modal .modalfitnesrezept form .trainingsnk .tname, .tpmodal .modal-content form .trainingsnk .tname, .tpmodal .modaltrainingplan form .trainingsnk .tname, .tpmodal .modalfitnesrezept form .trainingsnk .tname, .frmodal .modal-content form .trainingsnk .tname, .frmodal .modaltrainingplan form .trainingsnk .tname, .frmodal .modalfitnesrezept form .trainingsnk .tname {
+  margin-right: 93px;
+}
+
+.modal .dismiss-btn, .tpmodal .dismiss-btn, .frmodal .dismiss-btn {
+  background-color: red;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.modal .dismiss-btn button, .tpmodal .dismiss-btn button, .frmodal .dismiss-btn button {
+  position: absolute;
+  bottom: 10px;
+  padding: 5px 10px;
+  background: #111;
+  color: #f5f5f5;
+  border: 1px solid #111;
+  font-size: 16px;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal .dismiss-btn button:hover, .tpmodal .dismiss-btn button:hover, .frmodal .dismiss-btn button:hover {
+  color: #111;
+  background: #f5f5f5;
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+}
+
+.modal form .inputbild {
+  margin-right: 150px;
+  margin-top: 35px;
+  border: 1px solid #ccc;
+  height: 40px;
+  trainsition: all .5s ease-in-out;
+}
+
+.modal form .inputbild input {
+  display: none;
+}
+
+.modal form .inputbild .bildhochladen {
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 3px 12px;
+  cursor: pointer;
+}
+
+.modal form .inputbild:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  background: lightblue;
+}
+
+/*-------Modal trainingsplan--------------*/
+.tpmodal, .frmodal {
+  height: 900px;
+  width: 900px;
+}
+
+.tpmodal .modaltrainingplan, .frmodal .modaltrainingplan {
+  width: 650px;
+  height: 600px;
+}
+
+.tpmodal .modaltrainingplan form, .frmodal .modaltrainingplan form {
+  height: 300px;
+  width: 600px;
+}
+
+.tpmodal .modaltrainingplan form .ta, .frmodal .modaltrainingplan form .ta {
+  background: rgba(0, 0, 0, 0.22);
+  overflow: auto;
+  width: 570px;
+  height: 250px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  outline: none;
+  margin-left: 10px;
+  resize: none;
+}
+
+.tpmodal form .inputbild {
+  float: left;
+  margin-right: 250px;
+  margin-top: 300px;
+  border: 1px solid #ccc;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.tpmodal form .inputbild input {
+  display: none;
+}
+
+.tpmodal form .inputbild .bildhochladen {
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.tpmodal form .inputbild:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  background: lightblue;
+}
+
+.frmodal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.frmodal form .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.frmodal form .inputBox .zb, .frmodal form .inputBox .zt, .frmodal form .inputBox .nw {
+  overflow: auto;
+  margin-left: 10px;
+  position: absolute;
+  resize: none;
+  background: none;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 10px;
+}
+
+.frmodal form .inputBox .zt {
+  width: 270px;
+  height: 307px;
+}
+
+.frmodal form .inputBox .zb {
+  width: 290px;
+  height: 345px;
+}
+
+.frmodal form .inputBox .nw {
+  margin-top: 293px;
+  width: 290px;
+  height: 50px;
+}
+
+.frmodal form .inputbild {
+  margin-left: 10px;
+  margin-top: 330px;
+  border: 1px solid #ccc;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.frmodal form .inputbild input {
+  display: none;
+}
+
+.frmodal form .inputbild .bildhochladen {
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.frmodal form .inputbild:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  background: lightblue;
+}
+/*# sourceMappingURL=adminstyle.css.map */
